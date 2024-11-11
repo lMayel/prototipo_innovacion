@@ -1,21 +1,19 @@
 /* Header base */
 header {
     display: flex;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 10px 20px;
     height: 3.8rem;
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
+    width: 100%;              /* Cambiar a 100% para adaptabilidad */
+    padding: 0 1rem;           /* Espacio interno para evitar que los elementos toquen el borde */
+    box-sizing: border-box;    /* Incluye el padding en el ancho total */
 }
 
 /*------------------------------*/
-/* Parte izquierda (Logo y nombre)*/
+/* Parte izquierda (Logo y nombre) */
 /*------------------------------*/
-
 .header-left {
     display: flex;
     align-items: center;
@@ -30,234 +28,188 @@ header {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 4px solid var(--white);
+    border: 0.25rem solid var(--white); /* Escala borde con fuente */
 }
+
 
 /*------------------------------*/
 /*    Parte central (input)     */
 /*------------------------------*/
 
-.header-center input {
-    width: 700px;
-    max-width: 700px;
-    height: 1.6rem;
-    font-size: 1.2rem;
-    padding: 8px;
-    border: none;
-    border-radius: var(--border-radius-sm);
+/* Header-center styling */
+.header-center {
+    width: 700px;           
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* Input styling */
+.header-center input {
+    width: 70%;                    
+    height: 1.3rem;                    
+    font-size: 1rem;                 
+    padding: 0.5rem 1rem;            
+    border: 1px solid #ccc;         
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    outline: none;                   
+}
+
+/* Placeholder styling */
+.header-center input::placeholder {
+    color: #aaa;               
+    font-style: italic;
+}
+
 
 /*------------------------------*/
 /*      Header icons             */
 /*------------------------------*/
 
-.icon {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.icon img {
-    width: 30px;
-    height: 30px;
-}
-
-.icon span {
-    font-size: 1.3rem;
-    transition: transform 0.4s ease;
-}
-
-.icon span:hover {
-    color: #77e8ff;
-    transform: translateY(-2px);
-    transition: none;
-}
-
-.header-icons {
-    margin-left: 6rem;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
+/* Header-right container */
 .header-right {
     display: flex;
     align-items: center;
-    font-size: 1.4rem;
+    justify-content: flex-end;     
+    gap: 1rem;                       
+    flex-wrap: wrap;                 
 }
 
-/*------------------------------*/
-/*      Header left             */
-/*------------------------------*/
-
-/* Tokens */
-.tokens {
-    margin-right: 40px;
+/* Iconos en .header-right */
+.header-right .icon {
     display: flex;
-    gap: 18px;
+    flex-direction: row;
     align-items: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    gap: 0.6rem;
 }
 
-.tokens img {
+.header-right .icon img{
     width: 40px;
     height: 40px;
 }
 
-/* Estilos de usuario */
-.user-info {
+
+/* Estilo de la imagen de usuario */
+.header-right .user-info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5rem;
 }
 
-.user-img,
-.profile-pic {
+.header-right .user-info .user-img {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    margin-left:2rem;
+    border-radius: 50%;              
+    border: 2px solid var(--white);  
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
-.user-img {
-    margin-right: 12px;
+.header-right .user-info .username {
+    font-size: 1rem;
+    color: var(--white);
 }
 
-.username {
-    font-size: 16px;
-    font-weight: bold;
+.header-right .icon:hover {
+    color: #f2c2c2;   /* Cambia el color al pasar el ratón */
 }
 
-/* Media Queries */
-@media screen and (max-width: 1200px) {
-    .header-center input {
-        width: 500px;
-        max-width: 500px;
-    }
-
-    .header-icons {
-        margin-left: 2rem;
-    }
-
-    .tokens {
-        margin-right: 20px;
+@media (max-width: 1478px) {
+    .header-right .icon:not(.user-info) {
+        display: none;
     }
 }
-
-@media screen and (max-width: 992px) {
-    .header-center input {
-        width: 300px;
-        max-width: 300px;
-    }
-
-    .header-left h1 {
-        font-size: 1.5rem;
-    }
-
-    .header-icons {
-        gap: 10px;
-    }
-
-    .icon span {
-        font-size: 1.1rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    header {
-        height: auto;
-        padding: 10px;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-    }
-
-    .header-left {
-        width: 100%;
-        justify-content: center;
-    }
-
+/* Dispositivos grandes (pantallas de escritorio grandes) */
+@media (min-width: 1200px) {
     .header-center {
-        order: 3;
-        width: 100%;
+        width: 50%; /* Ajusta el ancho del input para pantallas grandes */
     }
-
-    .header-center input {
-        width: 100%;
-        max-width: 100%;
+    .header-right .icon img {
+        width: 45px;
+        height: 45px;
     }
-
-    .header-right {
-        order: 2;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .header-icons {
-        margin-left: 0;
-        justify-content: center;
-    }
-
-    .tokens {
-        margin-right: 20px;
+    .header-right .user-info .user-img {
+        width: 45px;
+        height: 45px;
     }
 }
 
-@media screen and (max-width: 576px) {
-    .header-left img {
+/* Dispositivos de escritorio estándar */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header-center {
+        width: 40%;
+    }
+    .header-left h1 {
+        font-size: 1.8rem;
+    }
+    .header-right .icon img,
+    .header-right .user-info .user-img {
         width: 40px;
         height: 40px;
     }
+}
 
+/* Tablets y pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .header-left h1 {
+        font-size: 1.6rem;
+    }
+    .header-center {
+        width: 50%;
+    }
+    .header-right {
+        gap: 0.8rem;
+    }
+    .header-right .icon img,
+    .header-right .user-info .user-img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Smartphones (pantallas pequeñas) */
+@media (max-width: 767px) {
+    .header-left h1 {
+        font-size: 1.4rem;
+    }
+    .header-center {
+        width: 100%;
+        padding: 0 1rem;
+    }
+    .header-right {
+        gap: 0.5rem;
+        flex-direction: column; /* Alinea los elementos verticalmente en dispositivos pequeños */
+    }
+    .header-right .icon img,
+    .header-right .user-info .user-img {
+        width: 30px;
+        height: 30px;
+    }
+    .header-right .icon {
+        font-size: 0.8rem;
+    }
+}
+
+/* Smartphones pequeños (pantallas muy pequeñas) */
+@media (max-width: 480px) {
     .header-left h1 {
         font-size: 1.2rem;
-        margin-left: 10px;
     }
-
-    .icon img {
+    .header-center input {
+        width: 90%; /* Ajusta el ancho del input para pantallas muy pequeñas */
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+    .header-right .icon img,
+    .header-right .user-info .user-img {
         width: 25px;
         height: 25px;
     }
-
-    .tokens img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .user-img,
-    .profile-pic {
-        width: 30px;
-        height: 30px;
-    }
-
-    .username {
-        font-size: 14px;
-    }
-
-    .header-icons {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    .header-right .icon {
+        font-size: 0.7rem;
     }
 }
 
-@media screen and (max-width: 375px) {
-    .header-left h1 {
-        font-size: 1rem;
-    }
-
-    .tokens {
-        margin-right: 10px;
-        gap: 10px;
-    }
-
-    .header-icons {
-        gap: 10px;
-    }
-
-    .icon {
-        gap: 8px;
-    }
-
-    .icon span {
-        font-size: 1rem;
-    }
-}
