@@ -592,3 +592,234 @@ body {
   /*        Media queries           */
   /*////////////////////////////////*/
 
+
+  /* Pantallas grandes entre 2200px y 1950px */
+  @media screen and (max-width: 2300px) and (min-width: 1950px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+    .post-container{
+      width: 40%;
+      margin-right: 900px;
+      min-width: 30%;
+    }
+    
+    .right-sidebar{
+      width: 30%;
+      position: absolute;
+    }
+  
+    header .header-center input{
+      width: 500px;
+    }
+  
+  }
+  
+
+/* Pantallas grandes entre 1950px y 1200px */
+  @media screen and (max-width: 1950px) and (min-width: 1200px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .left-bar{
+      max-width: 20%;
+    }
+    .post-container{
+      width: 50%;
+      margin-right: 1200px;
+      min-width: 20%;
+    }
+    
+    .right-sidebar{
+      min-width: 15%;
+    }
+  
+    header .header-center input{
+      width: 500px;
+    }
+  
+  }
+  
+
+
+/* Tablets grandes y pantallas medianas */
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    width: calc(100% - 60px);
+    margin: 20px auto;
+  }
+
+  .perfil {
+    position: static;
+    width: calc(100% - 60px);
+    margin: 20px auto;
+  }
+
+  .post-container {
+    margin: 20px auto;
+    width: calc(100% - 60px);
+  }
+
+  .right-sidebar {
+    position: static;
+    width: calc(100% - 60px);
+    margin: 20px auto;
+  }
+}
+
+/* Tablets y pantallas medianas */
+@media screen and (max-width: 992px) {
+  .stats {
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    width: 45%;
+    margin-bottom: 15px;
+  }
+
+  .post {
+    padding: 15px;
+  }
+
+  .post-actions {
+    flex-wrap: wrap;
+  }
+
+  .like-btn,
+  .comment-btn {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}
+
+/* Tablets pequeñas y móviles grandes */
+@media screen and (max-width: 768px) {
+  .perfil-img {
+    width: 100px;
+    height: 100px;
+    margin-left: 35%;
+  }
+
+  .username-info {
+    margin-left: 20%;
+    text-align: center;
+  }
+
+  .suggestion-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .suggestion-item .username {
+    margin: 10px 0;
+  }
+
+  .ranking-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .activity-item {
+    padding: 12px;
+  }
+
+  .menu-btn {
+    height: 4rem;
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+}
+
+/* Móviles */
+@media screen and (max-width: 576px) {
+  .perfil {
+    padding: 20px;
+  }
+
+  .perfil-img {
+    margin-left: 30%;
+  }
+
+  .username-info {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+
+  .stat-item {
+    width: 100%;
+  }
+
+  .post-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .post-header .profile-pic {
+    margin: 0 auto;
+  }
+
+  .post-text {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .suggestions-card h2,
+  .ranking-card h2,
+  .activities-card h2 {
+    font-size: 22px;
+  }
+
+  .follow-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Móviles pequeños */
+@media screen and (max-width: 375px) {
+  .perfil-img {
+    width: 80px;
+    height: 80px;
+    margin-left: 35%;
+  }
+
+  .post {
+    padding: 12px;
+  }
+
+  .menu-btn {
+    height: 3.5rem;
+    font-size: 0.9rem;
+  }
+
+  .activity-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen {
+  
+}
